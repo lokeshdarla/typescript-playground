@@ -10,11 +10,13 @@
 // }
 
 
+
 class User {
   readonly city: string ="CITY" // Default Values and readonly only to read not to write
 
-  private _courseCount:number =1
-  
+  //private _courseCount:number =1
+  protected _courseCount: number=1
+
   constructor(
       public email: string,
       private name: string) {
@@ -41,6 +43,13 @@ class User {
 }
 
 const Lokesh = new User("Lokesh@.com", "Lokesh");
+
+class subUser extends User {
+  isFamily: boolean =true
+  changeCourseCount(){
+    this._courseCount=23
+  }
+}
 
 //Lokesh.name 
 //Property 'name' is private and only accessible within class 'User'
